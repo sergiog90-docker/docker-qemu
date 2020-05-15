@@ -34,7 +34,7 @@ if [ -n "$ISO" ]; then
         basename=$(basename $ISO)
         if [ ! -f "/data/${basename}" ] || [ "$ISO_FORCE_DOWNLOAD" != "0" ]; then
             echo "Start iso download.. ($ISO)"
-            wget "$ISO" -O /data/${basename}
+            wget "$ISO" -O /data/${basename} --no-check-certificate
         fi
         ISO=/data/${basename}
     fi
